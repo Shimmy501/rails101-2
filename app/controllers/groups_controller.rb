@@ -45,7 +45,7 @@ end
 
 private
 
-def find_check_and_permission[:id]
+def find_check_and_permission
   @group = Group.find(params[:id])
 
   if current_user != @group.user
