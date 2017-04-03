@@ -18,15 +18,23 @@ end
 def create
   @group = Group.new(group_params)
   @group.save
+
   redirect_to groups_path
 end
 
 def update
   @group = Group.find(params[:id])
   @group.update(group_params)
-  
+
   redirect_to groups_path, notice: "Update Success"
 end
+
+  def destroy
+    @group = Group.find(params[:id])
+    @group.destroy
+
+    redirect_to groups_path, aler: "Group deleted"
+  end
 
 private
 
